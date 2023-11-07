@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+		<title>VietQR Online - Napas QR Payment Kit cho mọi người</title>
+		<link rel="dns-prefetch" href="//www.googletagservices.com" />
+		<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+		<link rel="dns-prefetch" href="//www.google-analytics.com" />
+		
+		<link rel="canonical" href="https://hash.codethoi.com/one_time_password.html" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<meta name="description" content="VietQR™ là của NAPAS - CTCP Thanh toán Quốc gia VN. VietQR là của CTY CASSO, cung cấp Payment Kit triển khai VietQR">
+		<meta NAME="keywords" CONTENT="VietQR, VietQR Online, Napas QR, Napas QR Payment Kit cho mọi người">
+		
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="VietQR Online - Napas QR Payment Kit cho mọi người" />
+		<link rel="apple-touch-icon" sizes="180x180" href="https://codethoi.com/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://codethoi.com/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://codethoi.com/favicon-16x16.png">
+
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		
+        <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>		
+		<script type="text/javascript" src="assets/js/qrcode.min.js"></script>
+		<script type="text/javascript" src="assets/js/ethereumjs-tx-1.3.3.min.js"></script>
+
+    </head>
+    <body>
+		
+        <div class="container">
+			<h1 id="page-title">VietQR Online</h1>
+			<hr />
+			<div id="content">
+				<p>This tool produces the current time-based one-time password with a given or generated secret. You may also create a QR code with your chosen label.</p>
+
+				<div class="row">
+					<div class="col-12 col-sm-6">
+						<h2>Thông tin thiết lập mã VietQR</h2>
+						<div class="row">
+							<div class="col-12 col-md-11">
+								<div class="form-group">
+									<label>Ngân hàng thụ hưởng (<span style="color: red">*</span>)</label>
+									<select name="bank" class="form-control">
+										<option value="970415">(ICB) VietinBank</option>
+										<option value="970436">(VCB) Vietcombank</option>
+										<option value="970418">(BIDV) BIDV</option>
+										<option value="970405">(VBA) Agribank</option>
+										<option value="970448">(OCB) OCB</option>
+										<option value="970422">(MB) MBBank</option>
+										<option value="970407">(TCB) Techcombank</option>
+										<option value="970416">(ACB) ACB</option>
+										<option value="970432">(VPB) VPBank</option>
+										<option value="970423">(TPB) TPBank</option>
+										<option value="970403">(STB) Sacombank</option>
+										<option value="970437">(HDB) HDBank</option>
+										<option value="970454">(VCCB) VietCapitalBank</option>
+										<option value="970429">(SCB) SCB</option>
+										<option value="970441">(VIB) VIB</option>
+										<option value="970443">(SHB) SHB</option>
+										<option value="970431">(EIB) Eximbank</option>
+										<option value="970426">(MSB) MSB</option>
+										<option value="546034">(CAKE) CAKE</option>
+										<option value="546035">(Ubank) Ubank</option>
+										<option value="963388">(TIMO) Timo</option>
+										<option value="971005">(VTLMONEY) ViettelMoney</option>
+										<option value="971011">(VNPTMONEY) VNPTMoney</option>
+										<option value="970400">(SGICB) SaigonBank</option>
+										<option value="970409">(BAB) BacABank</option>
+										<option value="970412">(PVCB) PVcomBank</option>
+										<option value="970414">(Oceanbank) Oceanbank</option>
+										<option value="970419">(NCB) NCB</option>
+										<option value="970424">(SHBVN) ShinhanBank</option>
+										<option value="970425">(ABB) ABBANK</option>
+										<option value="970427">(VAB) VietABank</option>
+										<option value="970428">(NAB) NamABank</option>
+										<option value="970430">(PGB) PGBank</option>
+										<option value="970433">(VIETBANK) VietBank</option>
+										<option value="970438">(BVB) BaoVietBank</option>
+										<option value="970440">(SEAB) SeABank</option>
+										<option value="970446">(COOPBANK) COOPBANK</option>
+										<option value="970449">(LPB) LienVietPostBank</option>
+										<option value="970452">(KLB) KienLongBank</option>
+										<option value="668888">(KBank) KBank</option>
+										<option value="970458">(UOB) UnitedOverseas</option>
+										<option value="970410">(SCVN) StandardChartered</option>
+										<option value="970439">(PBVN) PublicBank</option>
+										<option value="801011">(NHB HN) Nonghyup</option>
+										<option value="970434">(IVB) IndovinaBank</option>
+										<option value="970456">(IBK - HCM) IBKHCM</option>
+										<option value="970455">(IBK - HN) IBKHN</option>
+										<option value="970421">(VRB) VRB</option>
+										<option value="970457">(WVN) Woori</option>
+										<option value="970462">(KBHN) KookminHN</option>
+										<option value="970463">(KBHCM) KookminHCM</option>
+										<option value="458761">(HSBC) HSBC</option>
+										<option value="970442">(HLBVN) HongLeong</option>
+										<option value="970408">(GPB) GPBank</option>
+										<option value="970406">(DOB) DongABank</option>
+										<option value="796500">(DBS) DBSBank</option>
+										<option value="422589">(CIMB) CIMB</option>
+										<option value="970444">(CBB) CBBank</option>
+										<option value="533948">(CITIBANK) Citibank</option>
+										<option value="970466">(KEBHANAHCM) KEBHanaHCM</option>
+										<option value="970467">(KEBHANAHN) KEBHANAHN</option>
+										<option value="977777">(MAFC) MAFC</option>
+										<option value="999888">(VBSP) VBSP</option>
+									</select>
+
+								</div>
+								<div class="form-group">
+									<label>Số tài khoản thụ hưởng (<span style="color: red">*</span>)</label>
+									<input type="text" name="accountNumber" class="form-control" >
+								</div>
+								<div class="form-group">
+									<label>Tên chủ tài khoản (<span style="color: red">*</span>)</label>
+									<input type="text" name="accountName" class="form-control" >
+								</div>
+								<div class="form-group">
+									<label>Số tiền chuyển khoản</label>
+									<input type="text" name="amount" class="form-control" >
+								</div>
+								<div class="form-group">
+									<label>Nội dung chuyển khoản</label>
+									<input type="text" name="description" class="form-control" >
+								</div>
+							</div>
+							<div class="col-12 col-md-11">
+								<button type="button" id="generateButton" onclick="generated()" class="btn btn-primary btn-block"><i class="fa fa-key"></i> Generate</button>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-12 col-sm-6">
+						<h2>Mã VietQR của bạn</h2>
+						<div class="form-group">
+							<div id="QRWrapper">
+								<img id="QRCode" src="https://vietqr.net/img/default-qr.8c528dac.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="bd-footer p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
+			<div class="container">
+				<ul class="bd-footer-links ps-0 mb-3">
+					<li class="d-inline-block"><a target="_blank" href="https://jsonformatter.codethoi.com">JSON Formatter</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://xmlformatter.codethoi.com">XML Formatter</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://htmlformatter.codethoi.com">HTML Formatter</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://jsformatter.codethoi.com">JS Formatter</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://cssformatter.codethoi.com">CSS Formatter</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://qrcode.codethoi.com">QR Code</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://diffchecker.codethoi.com">DiffChecker</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://jconv.codethoi.com">Unicode Convert</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://ruler.codethoi.com">Thước đo Online</a> |</li>
+					<li class="d-inline-block ms-3"><a target="_blank" href="https://codethoi.com">Blog</a></li>
+				</ul>
+				<p class="mb-0">© 2020 CodeThoi</p>
+			</div>
+		</footer>
+		<script>
+			
+			
+			var QR_TYPE = {
+				STATIC: '11',
+				DYNAMIC: '12'
+			};
+			
+			var INSTRUMENT_TYPE = {
+				CARD: 'QRIBFTTC',
+				ACCOUNT: 'QRIBFTTA'
+			}
+			var CRC_ID = '63';
+			var CRC_LENGTH = '04';
+			var ATM_CARD_NUMBER_PREFIX = '9704';
+			
+			function generated() {
+				var qrRawData = {
+					qrType: $('input[name=amount]').val() ? 'DYNAMIC' : 'STATIC',
+					bin: $('select[name=bank]').val(),
+					receiverNumber: $('input[name=accountNumber]').val(),
+					amount: $('input[name=amount]').val(),
+					orderId: '',
+					description: $('input[name=description]').val()
+				}
+
+				const qrProperties = buildQRProps(qrRawData);
+				
+				const rawQRString = generateRawQRString(qrProperties);
+				const qrContentNoChecksum = rawQRString + CRC_ID + CRC_LENGTH;
+				
+				const checksum = calculateCRC(qrContentNoChecksum);
+				
+				const qrContent = qrContentNoChecksum + checksum.toUpperCase();
+  
+				console.log(qrContent);
+				
+				$("#QRWrapper").html("");
+				new QRCode(document.getElementById("QRWrapper"), {
+					text: qrContent,
+					width: 400,
+					height: 400,
+					colorDark : "#000000",
+					colorLight : "#ffffff",
+					correctLevel : QRCode.CorrectLevel.H
+				});
+			}
+			
+			function isBankCard(receiverNumber = '') {
+				return receiverNumber.startsWith(ATM_CARD_NUMBER_PREFIX) && (receiverNumber.length === 16 || receiverNumber.length === 19);
+			}
+			
+			function buildQRProps({ qrType, bin, receiverNumber, amount, orderId, description }) {
+				var qrProperties = {
+					payloadFormatIndicator: {
+						id: '00',
+						value: '01'
+					},
+					pointOfInitiationMethod: {
+						id: '01',
+						value: QR_TYPE[qrType]
+					},
+					merchantAccountInformation: {
+						id: '38',
+						value: {
+							guid: {
+							id: '00',
+							value: 'A000000727'
+						},
+						paymentNetwork: {
+								id: '01',
+								value: {
+									beneficiaryId: {
+									id: '00',
+									value: bin
+								},
+								receiverNumber: {
+									id: '01',
+									value: receiverNumber
+								}
+							}
+						},
+						servicesCode: {
+							id: '02',
+							value: isBankCard(receiverNumber) ? INSTRUMENT_TYPE.CARD : INSTRUMENT_TYPE.ACCOUNT
+						}
+					}
+				},
+				transactionCurrency: {
+					id: '53',
+					value: '704'
+				},
+				transactionAmount: {
+					id: '54',
+					value: amount
+				},
+				countryCode: {
+					id: '58',
+					value: 'VN'
+				},
+				additionalDataFieldTemplate: {
+					id: '62',
+					value: {
+						order: {
+							id: '01',
+							value: orderId
+						},
+						purposeOfTx: {
+							id: '08',
+							value: description
+						}
+					}
+				}
+			  };
+			  
+			  return qrProperties;
+			}
+			
+			function generateRawQRString (objProps) {
+				let result = '';
+				Object.values(objProps).forEach(prop => {
+					if (!prop.value) return '';
+					const isObject = (typeof prop.value === 'object');
+					const valueString = isObject ? generateRawQRString(prop.value) : String(prop.value);
+					if (valueString) {
+						result += prop.id;
+						result += valueString.length.toString().padStart(2, '0')
+						result += valueString
+					}
+				})
+				
+				return result;
+			}
+			
+			function calculateCRC(data) {
+				// Convert data to buffer
+				var buffer = ethereumjs.Buffer.Buffer.from(data,'utf8');
+				// Calculate the CRC
+				var result = crc16ccitt(buffer, 0xffff);
+				// Convert the CRC to hex string
+				return result.toString(16).padStart(4, '0');
+			}
+			
+			var TABLE = [
+			  0x0000, 0x1021, 0x2042, 0x3063, 0x4084, 0x50a5, 0x60c6, 0x70e7, 0x8108, 0x9129, 0xa14a, 0xb16b,
+			  0xc18c, 0xd1ad, 0xe1ce, 0xf1ef, 0x1231, 0x0210, 0x3273, 0x2252, 0x52b5, 0x4294, 0x72f7, 0x62d6,
+			  0x9339, 0x8318, 0xb37b, 0xa35a, 0xd3bd, 0xc39c, 0xf3ff, 0xe3de, 0x2462, 0x3443, 0x0420, 0x1401,
+			  0x64e6, 0x74c7, 0x44a4, 0x5485, 0xa56a, 0xb54b, 0x8528, 0x9509, 0xe5ee, 0xf5cf, 0xc5ac, 0xd58d,
+			  0x3653, 0x2672, 0x1611, 0x0630, 0x76d7, 0x66f6, 0x5695, 0x46b4, 0xb75b, 0xa77a, 0x9719, 0x8738,
+			  0xf7df, 0xe7fe, 0xd79d, 0xc7bc, 0x48c4, 0x58e5, 0x6886, 0x78a7, 0x0840, 0x1861, 0x2802, 0x3823,
+			  0xc9cc, 0xd9ed, 0xe98e, 0xf9af, 0x8948, 0x9969, 0xa90a, 0xb92b, 0x5af5, 0x4ad4, 0x7ab7, 0x6a96,
+			  0x1a71, 0x0a50, 0x3a33, 0x2a12, 0xdbfd, 0xcbdc, 0xfbbf, 0xeb9e, 0x9b79, 0x8b58, 0xbb3b, 0xab1a,
+			  0x6ca6, 0x7c87, 0x4ce4, 0x5cc5, 0x2c22, 0x3c03, 0x0c60, 0x1c41, 0xedae, 0xfd8f, 0xcdec, 0xddcd,
+			  0xad2a, 0xbd0b, 0x8d68, 0x9d49, 0x7e97, 0x6eb6, 0x5ed5, 0x4ef4, 0x3e13, 0x2e32, 0x1e51, 0x0e70,
+			  0xff9f, 0xefbe, 0xdfdd, 0xcffc, 0xbf1b, 0xaf3a, 0x9f59, 0x8f78, 0x9188, 0x81a9, 0xb1ca, 0xa1eb,
+			  0xd10c, 0xc12d, 0xf14e, 0xe16f, 0x1080, 0x00a1, 0x30c2, 0x20e3, 0x5004, 0x4025, 0x7046, 0x6067,
+			  0x83b9, 0x9398, 0xa3fb, 0xb3da, 0xc33d, 0xd31c, 0xe37f, 0xf35e, 0x02b1, 0x1290, 0x22f3, 0x32d2,
+			  0x4235, 0x5214, 0x6277, 0x7256, 0xb5ea, 0xa5cb, 0x95a8, 0x8589, 0xf56e, 0xe54f, 0xd52c, 0xc50d,
+			  0x34e2, 0x24c3, 0x14a0, 0x0481, 0x7466, 0x6447, 0x5424, 0x4405, 0xa7db, 0xb7fa, 0x8799, 0x97b8,
+			  0xe75f, 0xf77e, 0xc71d, 0xd73c, 0x26d3, 0x36f2, 0x0691, 0x16b0, 0x6657, 0x7676, 0x4615, 0x5634,
+			  0xd94c, 0xc96d, 0xf90e, 0xe92f, 0x99c8, 0x89e9, 0xb98a, 0xa9ab, 0x5844, 0x4865, 0x7806, 0x6827,
+			  0x18c0, 0x08e1, 0x3882, 0x28a3, 0xcb7d, 0xdb5c, 0xeb3f, 0xfb1e, 0x8bf9, 0x9bd8, 0xabbb, 0xbb9a,
+			  0x4a75, 0x5a54, 0x6a37, 0x7a16, 0x0af1, 0x1ad0, 0x2ab3, 0x3a92, 0xfd2e, 0xed0f, 0xdd6c, 0xcd4d,
+			  0xbdaa, 0xad8b, 0x9de8, 0x8dc9, 0x7c26, 0x6c07, 0x5c64, 0x4c45, 0x3ca2, 0x2c83, 0x1ce0, 0x0cc1,
+			  0xef1f, 0xff3e, 0xcf5d, 0xdf7c, 0xaf9b, 0xbfba, 0x8fd9, 0x9ff8, 0x6e17, 0x7e36, 0x4e55, 0x5e74,
+			  0x2e93, 0x3eb2, 0x0ed1, 0x1ef0,
+			];
+			function crc16ccitt (current, previous) {
+				let crc = typeof previous !== 'undefined' ? ~~previous : 0xffff;
+
+				for (let index = 0; index < current.length; index++) {
+					crc = (TABLE[((crc >> 8) ^ current[index]) & 0xff] ^ (crc << 8)) & 0xffff;
+				}
+
+				return crc;
+			};
+
+
+		</script>
+    </body>
+</html>
