@@ -143,9 +143,10 @@
 					<div class="col-12 col-sm-6">
 						<h2>Mã VietQR của bạn</h2>
 						<div class="form-group">
-							<div id="QRWrapper">
-								<img id="QRCode" src="https://vietqr.net/img/default-qr.8c528dac.png" />
-							</div>
+							<img id="qrTemp" src="assets/img/default-qr.8c528dac.png" />
+							<div id="QRWrapper" style="display:none"></div>
+							<img style="display:none" src="assets/img/template.png" id="template-qr" />
+							<canvas id="myCanvas" width="400" height="500" style="display: none"></canvas>
 						</div>
 					</div>
 				</div>
@@ -166,7 +167,7 @@
 					<li class="d-inline-block ms-3"><a target="_blank" href="https://ruler.codethoi.com">Thước đo Online</a> |</li>
 					<li class="d-inline-block ms-3"><a target="_blank" href="https://codethoi.com">Blog</a></li>
 				</ul>
-				<p class="mb-0">© 2020 CodeThoi</p>
+				<p class="mb-0">© 2023 CodeThoi</p>
 			</div>
 		</footer>
 		<script>
@@ -209,12 +210,32 @@
 				$("#QRWrapper").html("");
 				new QRCode(document.getElementById("QRWrapper"), {
 					text: qrContent,
-					width: 400,
-					height: 400,
+					width: 200,
+					height: 200,
 					colorDark : "#000000",
 					colorLight : "#ffffff",
 					correctLevel : QRCode.CorrectLevel.H
 				});
+				
+				setTimeout(function() {
+					document.getElementById("myCanvas").style.display = 'block';
+					document.getElementById("qrTemp").style.display = 'none';
+					const canvas = document.getElementById("myCanvas");
+					const ctx = canvas.getContext("2d");
+					const template = document.getElementById("template-qr");
+					const qrCode = document.querySelector('#QRWrapper img');
+					
+				
+					ctx.drawImage(template, 0, 0, 400, 500);
+					ctx.drawImage(qrCode, 85, 120, 230, 220);
+					
+					ctx.font = "bold 12px Times New Roman";
+					ctx.fillStyle = "#005aaa";
+					ctx.textAlign = "center";
+					ctx.fillText("Tên chủ TK: " + $('input[name=accountName]').val(), 200, 375);
+					ctx.fillText("Số TK: " + qrRawData.receiverNumber, 200, 395);
+				}, 100);
+				
 			}
 			
 			function isBankCard(receiverNumber = '') {
